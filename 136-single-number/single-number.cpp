@@ -6,6 +6,7 @@ public:
         {
             xr=xr^nums[i];
         }
-        return xr;
+       
+       return xr;
     }
 };
