@@ -28,7 +28,7 @@ public:
             {
                 head=knode;
             }
-            else
+            else 
             previous->next=knode;
             previous=temp;
             temp=nextnode;
@@ -50,7 +50,7 @@ public:
         ListNode* prev=NULL;
         while(temp!=NULL)
         {
-            ListNode* front=temp->next;;
+            ListNode* front=temp->next;
             temp->next=prev;
             prev=temp;
             temp=front;
