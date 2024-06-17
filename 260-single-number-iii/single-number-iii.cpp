@@ -7,14 +7,14 @@ public:
     {
         mpp[nums[i]]++;
     }
-    vector<int>lalli;
+    vector<int>l;
     for(auto it:mpp)
     {
         if(it.second==1)
         {
-            lalli.push_back(it.first);
+            l.push_back(it.first);
         }
     }
-    return lalli;
+    return l;
     }
 };
