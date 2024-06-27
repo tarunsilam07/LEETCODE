@@ -24,27 +24,13 @@ public:
         }
         return head;
     }
-    int GCD(int num1,int num2)
+    int GCD(int val1,int val2)
     {
-        int maxi=0;
-        int mini=0;
-        if(num1==num2)
-        {
-            maxi=num1;
-            mini=num2;
+        while(val2 != 0) {
+            int temp = val2;
+            val2 = val1 % val2;
+            val1 = temp;
         }
-        else{
-        maxi=max(num1,num2);
-        mini=min(num1,num2);
-        }
-        vector<int>v1;
-        for(int i=1;i<=maxi;i++)
-        {
-            if(maxi%i==0 && mini%i==0)
-            {
-                v1.push_back(i);
-            }
-        }
-        return *max_element(v1.begin(),v1.end());
+        return val1;
     }
 };
