@@ -12,17 +12,17 @@ public:
             int l=heights[i];
             if(next[i]==-1)
             next[i]=n;
-            int b= next[i]-prev[i]-1;
+            int b=next[i]-prev[i]-1;
             int new_area=l*b;
             area=max(area,new_area);
         }
         return area;
     }
-    vector<int> NextSmallerElement(vector<int>& heights,int n)
+    vector<int> NextSmallerElement(vector<int>&heights,int n)
     {
         stack<int>st;
-        vector<int>ans(n);
         st.push(-1);
+        vector<int>ans(n);
         for(int i=n-1;i>=0;i--)
         {
             int curr=heights[i];
@@ -33,11 +33,11 @@ public:
         }
         return ans;
     }
-    vector<int> PreviousSmallerElement(vector<int>& heights,int n)
+    vector<int> PreviousSmallerElement(vector<int>&heights,int n)
     {
         stack<int>st;
-        vector<int>ans(n);
         st.push(-1);
+        vector<int>ans(n);
         for(int i=0;i<n;i++)
         {
             int curr=heights[i];
