@@ -14,7 +14,6 @@ public:
         int push=0;
         for(int i=0;i<count.size();i++){
            double k=ceil((i+1)/8.0);
-           cout<<k;
            push=push+count[i]*k;
         }
         return push;
