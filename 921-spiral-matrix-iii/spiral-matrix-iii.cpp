@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> spiralMatrixIII(int rows, int cols, int rStart, int cStart) {
-        vector<vector<int>> directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}}; // East, South, West, North
+        vector<vector<int>> directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}}; 
         vector<vector<int>> result = {{rStart, cStart}};
         int steps = 0, d = 0;
         
