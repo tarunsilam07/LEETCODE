@@ -3,7 +3,7 @@ public:
     vector<int> arrayRankTransform(vector<int>& arr) {
         unordered_map<int,int>hash;
         int n=arr.size();
-        vector<int>rank(n,1);
+        // vector<int>rank(n,1);
         vector<int>dup;
         dup=arr;
         sort(dup.begin(),dup.end());
@@ -15,9 +15,9 @@ public:
             }
         }
         for(int i=0;i<n;i++){
-            rank[i]=hash[arr[i]];
+            arr[i]=hash[arr[i]];
         }
-        return rank;
+        return arr;
 
     }
 };
