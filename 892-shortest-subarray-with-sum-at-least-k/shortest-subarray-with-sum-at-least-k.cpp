@@ -1,21 +1,26 @@
 class Solution {
 public:
     int shortestSubarray(vector<int>& nums, int k) {
-        long long n = nums.size();
-        set <pair<long long,long long>> s;
-        s.insert({0,-1});
-        long long pref = 0;
-        long long ans = n+1;
-        long long mx = -n-1;
-        for(long long i=0; i<nums.size(); i++){
-            pref += nums[i];
-            s.insert({pref,i});
-            while(s.begin()->first<=pref-k){
-                mx = max(mx,s.begin()->second);
-                s.erase(s.begin());
+          priority_queue<pair<long long , long long> , vector<pair<long long , long long>> , greater<pair<long long , long long>>> pq;
+        long long sumi = 0;
+        long long maxi = 1e18;
+        for(long long i = 0; i<nums.size() ; i++){
+            sumi += (long long)nums[i];
+            if(sumi >= k){
+                maxi = min(maxi , i+1);
             }
-            ans = min(ans,i-mx);
+            while(!pq.empty() && (sumi - pq.top().first >= k)){
+                auto &p = (pq.top());
+                maxi = min(maxi , i - p.second );
+                pq.pop();
+            }
+            pq.push({sumi , i});
         }
-        return (ans>=n+1?-1:ans);
+        if(maxi == 1e18){
+            return -1;
+        }
+        else{
+            return maxi;
+        } 
     }
 };
